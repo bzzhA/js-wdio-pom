@@ -1,0 +1,6 @@
+test-results
+fail-test-screenshots
+README.md
+node_modules
+package-lock.json
+package.json
