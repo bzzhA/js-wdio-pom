@@ -23,9 +23,19 @@ export const config = {
     // will be called from there.
     //
     specs: [
-        // './test/specs/**/*.js'
-        './test/specs/HardCore.test.js'
+        './test/specs/**/*.js'
     ],
+    suites: {
+        all: [
+            './test/specs/**/*.js'
+        ],
+        HurtMePlenty: [
+            './test/specs/HurtMePlenty.test.js'
+        ],
+        HardCore: [
+            './test/specs/HardCore.test.js'
+        ],
+    },
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
