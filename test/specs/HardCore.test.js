@@ -51,23 +51,30 @@ describe('Google cloud calculator test ```HardCore```', () => {
     it('Check button email on Estimate block', async () => {
         await expect(Estimate.emailBtn).toBeDisplayed();
         await expect(Estimate.emailBtn).toBeClickable();
+        await CalculatorPage.wait();
     });
     it('Switch window on YOPmail email and copy Email', async () => {
         await CalculatorPage.newWindow(email);
         await expect(browser).toHaveTitleContaining('Email generator');
         await CalculatorPage.waitAndClick(MinuteMail.copyBtn, 3000);
+        await CalculatorPage.wait();
     });
     it('Switch window on Calculator, click email button and paste Email', async () => {
         await CalculatorPage.switchWindow(calc);
         await CalculatorPage.switchFrame();
         await CalculatorPage.waitAndClick(Estimate.emailBtn, 3000);
+        await CalculatorPage.wait();
         await CalculatorPage.waitAndClick(Estimate.estimateEmail, 3000);
+        await CalculatorPage.wait();
         await CalculatorPage.pasteText();
+        await CalculatorPage.wait();
         await expect(Estimate.sendEmailEstimate).toBeDisplayed();
         await expect(Estimate.sendEmailEstimate).toBeClickable();
     });
     it('Send email and check', async () => {
+        await CalculatorPage.wait();
         await CalculatorPage.waitAndClick(Estimate.sendEmailEstimate, 3000);
+        await CalculatorPage.wait();
         await CalculatorPage.switchWindow(email);
         await CalculatorPage.pauseAndRefresh();
         await CalculatorPage.waitAndClick(MinuteMail.message, 3000);

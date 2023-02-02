@@ -72,6 +72,9 @@ class CalculatorPage extends Page{
         }
         return $$(items[name])[1]
     }
+    async wait() {
+        await browser.pause(1000)
+    }
 
     async switchFrame() {
         await browser.switchToFrame(await this.firstFrame)
