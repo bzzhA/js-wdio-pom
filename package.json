@@ -10,7 +10,9 @@
     "@wdio/spec-reporter": "^8.1.2"
   },
   "scripts": {
-    "wdio": "wdio run ./wdio.conf.js"
+    "All": "wdio run ./wdio.conf.js --suite all",
+    "HurtMePlenty": "wdio run ./wdio.conf.js --suite HurtMePlenty",
+    "HardCore": "wdio run ./wdio.conf.js --suite HardCore"
   },
   "dependencies": {
     "wdio-junit-reporter": "^0.4.4"
